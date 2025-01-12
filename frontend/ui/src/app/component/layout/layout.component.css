@@ -1,0 +1,75 @@
+* {
+	margin: 0px;
+	box-sizing: border-box;
+	overflow-y: hidden;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	/* background: #34e7e4; */
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	/* background-color: #553434; */
+}
+
+
+header {
+	/* background-color: rgb(var(--color-surface-700)); */
+	box-shadow: 0 2px 10px rgba(0 ,0 ,0, 0.4);
+	z-index: 10000;
+	/* border-width: 0; */
+	/* border: none; */
+	/* border-bottom: 1px solid #1d2012; */
+}
+
+.left {
+	/* background-color: rgb(109, 135, 158); */
+	/* background-color: rgb(var(--color-surface-700)); */
+	/* box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4); */
+	padding: 0rem 0 3rem 0;
+	flex: 0.32 1 1px;
+	border-right: 1px solid rgb(var(--color-surface-700));
+	z-index: 10000;
+}
+
+.right {
+	/* background-color: rgb(77, 100, 122); */
+	padding: 3rem 0 3rem 0;
+	flex: 0.90 1 1px;
+	border-left: 1px solid rgb(var(--color-surface-700));
+	border-top: 1px solid rgb(var(--color-surface-700));
+}
+
+main {
+	/* background-color: rgb(60, 70, 80); */
+	/* padding: 0rem 0 0rem 0; */
+	
+	flex: 5 5 150px;
+}
+
+.layout {
+	display: flex;
+	flex: 1;
+}
+
+footer {
+	background-color: rgb(45, 51, 57);
+	padding: 1rem 0 1rem 0;
+	/* we can make it fixed on the bottom of the display because if we have endless scrolling we'll never see the footer */
+}
+
+@media all and (max-width: 550px) {
+	.layout {
+		flex-direction: column;
+	}
+
+	main {
+		padding: 5em 0 5em 0;
+	}
+}

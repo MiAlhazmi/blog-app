@@ -1,0 +1,244 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* font-family: 'Poppins', sans-serif; */
+}
+
+.error-message {
+	color: rgb(225, 105, 105);
+	font-size: 13px;
+	margin-top: 5px;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: 500;
+	position: relative;
+}
+
+h2 a {
+	color: rgb(var(--color-primary-500));
+	/* font-weight: 500; */
+	text-decoration: none;
+	cursor: pointer;
+}
+
+img {
+	z-index: -100;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	/* background-image: url("src/assets/images/signup.png"); */
+	/* opacity: %; */
+	/* background-size: cover;
+	background-position: center; */
+	background: linear-gradient(135deg, rgb(var(--color-surface-600)), rgb(var(--color-surface-800)));
+}
+
+
+
+.container {
+	max-width: 700px;
+	width: 100%;
+	background-color: rgb(var(--color-surface-700));
+	padding: 25px 30px;
+	border-radius: 5px;
+	box-shadow: 0 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+.container .title {
+	font-size: 25px;
+	font-weight: 500;
+	position: relative;
+}
+
+.container .title::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 3px;
+	width: 30px;
+	border-radius: 5px;
+	background: linear-gradient(135deg, rgb(var(--color-tertiary-700)), rgb(var(--color-tertiary-500)));
+}
+
+.content form .user-details {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+	margin-bottom: 15px;
+	width: calc(100% / 2 - 20px);
+}
+
+/* .user-details .input-box input:invalid {
+	border-color: #ffb2b2;
+} */
+
+form .input-box span.details {
+	display: block;
+	font-weight: 500;
+	margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+	height: 45px;
+	width: 100%;
+	outline: none;
+	font-size: 13px;
+	border-radius: 5px;
+	padding-left: 15px;
+	color: rgb(var(--color-text));
+	border: 1px solid rgb(var(--color-surface-500));
+	/* border-bottom-width: 1px; */
+	transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+	border-color: rgb(var(--color-surface-500));
+}
+
+.user-details .input-box input::placeholder {
+	border-color: rgb(var(--color-text));
+}
+
+form .user-details .email-input {
+	width: 100%;
+}
+
+
+form .user-details .email-input input {
+	width: 100%;
+}
+
+input[type="text"] {
+	background-color: rgb(var(--color-surface-600));
+}
+
+input[type="password"] {
+	background-color: rgb(var(--color-surface-600));
+}
+
+input[type="email"] {
+	background-color: rgb(var(--color-surface-600));
+}
+
+form .gender-details .gender-title {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+form .category {
+	display: flex;
+	width: 80%;
+	margin: 14px 0;
+	justify-content: space-between;
+}
+
+form .category label {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+form .category label .dot {
+	height: 18px;
+	width: 18px;
+	border-radius: 50%;
+	margin-right: 10px;
+	background: rgb(var(--color-surface-600));
+	border: 5px solid transparent;
+	transition: all 0.3s ease;
+}
+
+#dot-1:checked~.category label .one,
+#dot-2:checked~.category label .two {
+	background: rgb(var(--color-primary-500));
+	border-color: rgb(var(--color-surface-500));
+}
+
+form input[type="radio"] {
+	display: none;
+}
+
+form .button {
+	height: 45px;
+	margin: 35px;
+}
+
+form .button input {
+	height: 100%;
+	width: 100%;
+	border-radius: 5px;
+	border: none;
+	color: rgb(var(--color-surface-800));
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	background: var(--color-accent);
+
+	&:hover {
+		filter: brightness(110%);
+	}
+
+	&:active {
+		filter: brightness(90%);
+		-webkit-transform: scale(0.96);
+		transform: scale(0.96);
+	}
+}
+
+
+form .button input:disabled {
+	cursor: not-allowed;
+}
+
+form .button input:not(:disabled):hover {
+	background: linear-gradient(135deg, rgb(var(--color-primary-500)),
+			rgb(var(--color-primary-500)));
+}
+
+@media(max-width: 584px) {
+	.container {
+		max-width: 100%;
+	}
+
+	form .user-details .input-box {
+		margin-bottom: 15px;
+		width: 100%;
+	}
+
+	form .category {
+		width: 100%;
+	}
+
+	.content form .user-details {
+		max-height: 300px;
+		overflow-y: scroll;
+	}
+
+	.user-details::-webkit-scrollbar {
+		width: 5px;
+	}
+}
+
+@media(max-width: 459px) {
+	.container .content .category {
+		flex-direction: column;
+	}
+}

@@ -1,0 +1,31 @@
+<div class="top-navigation">
+	<!-- <div class="title-hashtag">
+		<fa-icon [icon]="hashtag" size="lg"></fa-icon>
+	</div> -->
+	<h5 class="title-text"></h5>
+	<!-- <div class="search">
+		<input class="search-input" type="text" placeholder="Search..." />
+		<fa-icon [icon]="search" size="sm" class="text-secondary my-auto"></fa-icon>
+	</div> -->
+	<span class="top-navigation-icon" (click)="handleMode()">
+		<fa-icon [icon]="darkTheme ? sun : moon" size="lg"></fa-icon>
+	</span>
+	<fa-icon [icon]="bell" size="lg" class="top-navigation-icon"></fa-icon>
+	<!-- <fa-icon [icon]="userCircle" size="lg" class="top-navigation-icon"></fa-icon> -->
+	<div class="top-navigation-icon">
+		<button class="dropdown-btn" (click)="show = !show">
+			<fa-icon [icon]="userCircle" size="lg"></fa-icon>
+		</button>
+		<div *ngIf="show" class="dropdown" id="dropdown">
+			<div *ngIf="!_service.isUserSignedin()" (click)="handleClick(0)">
+				<button>Login</button>
+			</div>
+			<div *ngIf="!_service.isUserSignedin()" (click)="handleClick(1)">
+				<button>Signup</button>
+			</div>
+			<div *ngIf="_service.isUserSignedin()" (click)="handleClick(2)">
+				<button>Leave this shitty site</button>
+			</div>
+		</div>
+	</div>
+</div>

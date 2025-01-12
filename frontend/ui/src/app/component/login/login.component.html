@@ -1,0 +1,35 @@
+<body>
+	<div class="container">
+		<div class="title">Login</div>
+		<div class="content">
+			<form [formGroup]="form">
+				<div class="user-details">
+					<div class="input-box">
+						<label for="username" class="details">Username *</label>
+						<input type="text" id="username" placeholder="Enter Username" formControlName="username"
+							required>
+						<div *ngIf="username.touched && username.invalid" class="error-message">
+							<div *ngIf="username.errors?.['required']">Username is required</div>
+						</div>
+					</div>
+					<div class="input-box">
+						<label for="password" class="details">Password *</label>
+						<input type="password" id="password" placeholder="Enter your password"
+							formControlName="password" required>
+						<div *ngIf="password.touched && (password.invalid || password.value.length < 4)"
+							class="error-message">
+							<div *ngIf="password.errors?.['required']">Password is required</div>
+						</div>
+					</div>
+					<div class="button">
+						<!-- <input type="submit" value="Login" (click)="login()"
+							[disabled]="form.invalid || form.untouched"> -->
+
+						<button type="submit" value="Login" (click)="login()" [disabled]="form.invalid || form.untouched">Login</button>
+					</div>
+				</div>
+			</form>
+			<h2>Don't have an account? <a href="/signup">Create one</a></h2>
+		</div>
+	</div>
+</body>

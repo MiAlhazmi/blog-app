@@ -1,0 +1,87 @@
+<body>
+	<!-- Feed starts -->
+	<div class="feed">
+		<!-- <div class="feed_header"> -->
+		<header>
+			<h2>My feed</h2>
+			<div class="background-header"></div>
+		</header>
+		<!-- </div> -->
+
+		<!-- Posting box starts -->
+		<div class="postingBox">
+			<form>
+				<div class="postingBox_input">
+					<img src="assets/images/goprofile.png" alt="profile pic" />
+					<input type="text" placeholder="What's on your mind?">
+				</div>
+				<button class="postingBox_postButton">Post</button>
+			</form>
+		</div>
+		<!-- Posting box ends -->
+
+		<!-- Posts starts -->
+		<div class="post" *ngFor="let p of posts">
+			<div class="post_avatar">
+				<img src="assets/images/goprofile.png" alt="post_avatar">
+			</div>
+			<div class="post_body">
+				<div class="post_header">
+					<div class="post_headerText">
+						<h3>{{p.user?.firstName}}
+							<span class="post_headerSpecial">
+								@{{p.user?.username}}
+							</span>
+						</h3>
+					</div>
+
+					<div class="post__headerDescription">
+						<p style="font-weight: bold;">{{p.content?.subject}}</p>
+						<p>{{p.content?.content}}</p>
+					</div>
+
+				</div>
+				<img src="assets/images/go_wallpaper.png" alt="" />
+
+				<div class="post_footer">
+					<span class="comment">
+						<div class="comment-icon"><fa-icon [icon]="comment" size="lg"></fa-icon>
+						</div>
+						<div class="stat">
+							{{p.comments.length}}
+						</div>
+					</span>
+					<span class="like">
+						<div class="like-icon" (click)="_likePost(p.id)"><fa-icon [icon]="like" size="lg"></fa-icon>
+						</div>
+						<div class="stat">
+							{{p.likes}}
+						</div>
+					</span>
+					<span class="dislike">
+						<div class="dislike-icon" (click)="_dislikePost(p.id)"><fa-icon [icon]="dislike"
+								size="lg"></fa-icon>
+						</div>
+						<div class="stat">
+							{{p.dislikes}}
+						</div>
+					</span>
+					<span class="views">
+						<div class="views-icon"><fa-icon [icon]="views" size="lg"></fa-icon></div>
+						<div class="stat">
+							{{p.views}}
+						</div>
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- Posts ends -->
+	</div>
+	<!-- Feed ends -->
+	<div class="sticky-button" (click)="gotoEditor()">
+		<button (click)="gotoEditor()">
+			<fa-icon [icon]="pen" size="lg"></fa-icon>
+			<!-- <app-sidebaricon [icon]="pen" text="My feed"></app-sidebaricon> -->
+		</button>
+	</div>
+</body>

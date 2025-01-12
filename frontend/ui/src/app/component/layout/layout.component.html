@@ -1,0 +1,24 @@
+<body>
+	<header>
+		<app-topbar class="top-bar"></app-topbar>
+	</header>
+	<div class="layout">
+		<aside class="left">
+			<app-sidebar (iconTextChanged)="onPageStateChanged($event)"></app-sidebar>
+		</aside>
+		<main>
+			<div class="breadcrumb">
+				<!-- <app-breadcrumb></app-breadcrumb> -->
+			</div>
+			<div class="page-content">
+				<router-outlet></router-outlet>
+			</div>
+		</main>
+		<aside class="right">
+			Some shit goes here
+		</aside>
+	</div>
+	<footer>
+		<app-footer></app-footer>
+	</footer>
+</body>

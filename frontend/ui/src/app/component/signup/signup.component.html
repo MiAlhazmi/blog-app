@@ -1,0 +1,93 @@
+<!-- <div class="background-img">
+	<img src="assets/images/signup.png" alt="background image">
+</div> -->
+<body>
+	<div class="container">
+		<div class="title">Signup</div>
+		<div class="content">
+			<form [formGroup]="form">
+				<div class="user-details">
+					<div class="input-box">
+						<span class="details">First Name *</span>
+						<input type="text" placeholder="Enter your first name" formControlName="firstName" required>
+						<div *ngIf="firstName.touched && firstName.invalid" class="error-message">
+							<div *ngIf="firstName.errors?.['required']">First name is required</div>
+							<div *ngIf="firstName.errors?.['pattern']">Invalid first name</div>
+						</div>
+					</div>
+					<div class="input-box">
+						<span class="details">Last Name *</span>
+						<input type="text" placeholder="Enter your last name" formControlName="lastName" required>
+						<div *ngIf="lastName.touched && lastName.invalid" class="error-message">
+							<div *ngIf="lastName.errors?.['required']">Last name is required</div>
+							<div *ngIf="lastName.errors?.['pattern']">Invalid last name</div>
+						</div>
+					</div>
+					<div class="input-box">
+						<span class="details">Username *</span>
+						<input type="text" placeholder="Enter your username" formControlName="username" required>
+						<div *ngIf="username.touched && username.invalid" class="error-message">
+							<div *ngIf="username.errors?.['required']">Username is required</div>
+							<div *ngIf="username.errors?.['pattern']">Invalid username name</div>
+						</div>
+					</div>
+					<div class="input-box">
+						<span class="details">Age *</span>
+						<input type="text" placeholder="Enter your age" formControlName="age" required>
+						<div *ngIf="age.touched && age.invalid" class="error-message">
+							<div *ngIf="age.errors?.['required']">Age is required</div>
+							<div *ngIf="age.errors?.['pattern']">Invalid age</div>
+						</div>
+					</div>
+					<div class="input-box email-input">
+						<span class="details">Email *</span>
+						<input type="text" placeholder="Enter your email" formControlName="email" required>
+						<div *ngIf="email.touched && email.invalid" class="error-message">
+							<div *ngIf="email.errors?.['required']">Email is required</div>
+							<div *ngIf="email.errors?.['pattern']">Invalid email</div>
+						</div>
+					</div>
+					<div class="input-box">
+						<span class="details">Password *</span>
+						<input type="text" placeholder="Enter your password" formControlName="password" required>
+						<div *ngIf="password.touched && password.invalid" class="error-message">
+							<div *ngIf="password.errors?.['required']">Password is required</div>
+							<div *ngIf="password.errors?.['minlength']">Invalid password</div>
+						</div>
+					</div>
+					<div class="input-box">
+						<span class="details">Confirm Password *</span>
+						<input type="text" placeholder="Confirm your password" formControlName="passwordConfirm"
+							required>
+						<div *ngIf="passwordConfirm.touched && passwordConfirm.invalid" class="error-message">
+							<div *ngIf="passwordConfirm.errors?.['required']">Confirm your password</div>
+							<div *ngIf="passwordConfirm.errors?.['pattern']">Mismatched password</div>
+						</div>
+					</div>
+				</div>
+				<div class="gender-details">
+					<input type="radio" name="gender" id="dot-1" formControlName="gender" value="male">
+					<input type="radio" name="gender" id="dot-2" formControlName="gender" value="female">
+					<span class="gender-title">Gender *</span>
+					<div class="category">
+						<label for="dot-1">
+							<span class="dot one"></span>
+							<span class="gender">Male</span>
+						</label>
+						<label for="dot-2">
+							<span class="dot two"></span>
+							<span class="gender">Female</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="button">
+					<input type="submit" value="Register" (click)="signup()"
+						[disabled]="form.invalid || form.untouched">
+				</div>
+			</form>
+			<h2>Already registered? <a href="/login">login</a></h2>
+
+		</div>
+	</div>
+</body>

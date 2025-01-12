@@ -1,0 +1,17 @@
+<!-- <div class="fixed top-0 left-0 h-screen w-16 flex flex-col bg-gray-200
+                shadow-lg">
+	<app-sidebaricon [icon]="feed" text="My feed"></app-sidebaricon>
+	<app-sidebaricon [icon]="bookmark" text="Bookmarks"></app-sidebaricon>
+	<app-sidebaricon [icon]="profile" text="My profile"></app-sidebaricon>
+	<app-sidebaricon [icon]="like" text="Liked posts"></app-sidebaricon>
+	<hr class="sidebar-hr">
+	<app-sidebaricon [icon]="more" text="Settings"></app-sidebaricon>
+</div> -->
+<div class="fixed-sidebar">
+	<app-sidebaricon [icon]="feed" text="My feed" (click)="onIconClick('My feed')"></app-sidebaricon>
+	<app-sidebaricon [icon]="bookmark" text="Bookmarks" (click)="onIconClick('Bookmark')"></app-sidebaricon>
+	<app-sidebaricon [icon]="profile" text="My profile" (click)="onIconClick('My profile')"></app-sidebaricon>
+	<app-sidebaricon [icon]="hashtag" text="Liked posts" (click)="onIconClick('Followed hashtags')"></app-sidebaricon>
+	<app-sidebaricon [icon]="like" text="Liked posts" (click)="onIconClick('Liked posts')"></app-sidebaricon>
+	<app-sidebaricon [icon]="more" text="Settings" (click)="onIconClick('Settings')"></app-sidebaricon>
+</div>

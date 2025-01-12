@@ -1,0 +1,48 @@
+<form>
+    <header class="card-header">
+        <!-- <ng-content id="close-button"></ng-content> -->
+        <button id="close-button" class="material-symbols-outlined" (click)="close()">close</button>
+        <p id="text-edit-profile">Edit profile</p>
+        <button id="save-button" (click)="updateProfile(profile)" (click)="refreshPage()">Save</button>
+    </header>
+    <main class="card card--main">
+        <header class="edit-header-wallpaper">
+            <div class="wallpaper-edit-buttons">
+                <!-- TODO: X button that deletes the wallpaper -->
+                <button class="material-symbols-outlined">add_a_photo</button>
+                <!-- TODO: wallpaper edit button that browse the local volume -->
+                <button class="material-symbols-outlined">close</button>
+            </div>
+            <img src="/assets/images/go_wallpaper.png" alt="profile-wallpaper">
+        </header>
+        <div class="edit-avatar">
+            <div class="avatar-edit-buttons">
+                <!-- TODO: avatar edit button that browse the local volume -->
+                <button class="material-symbols-outlined">add_a_photo</button>
+                <!-- TODO: X button that deletes the avatar -->
+                <button class="material-symbols-outlined">close</button>
+            </div>
+            <img src="assets/images/goprofile.png" alt="profile avatar" />
+        </div>
+        <div class="input" id="1">
+            <input class="input__field" type="this.userTag" [(ngModel)]="profile.userTag" name="userTag" id="userTag"
+                maxlength="20" placeholder=" ">
+            <span class="input__label">Name</span>
+        </div>
+        <!-- <div class="input" id="2">
+            <input class="input__field" type="username" name="username" id="username" placeholder=" "
+                maxlength="20">
+            <span class="input__label">Username</span>
+        </div> -->
+        <div class="input" id="3">
+            <input class="input__field" type="bio" [(ngModel)]="profile.bio" name="bio" id="bio" maxlength="50"
+                placeholder=" ">
+            <span class="input__label">Bio</span>
+        </div>
+        <div class="input" id="4">
+            <input class="input__field" type="text" [(ngModel)]="profile.interests" name="interests" id="interests"
+                maxlength="50" placeholder=" ">
+            <span class="input__label">interests</span>
+        </div>
+    </main>
+</form>

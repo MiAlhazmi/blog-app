@@ -1,0 +1,108 @@
+<body *ngIf="isLoggedIn">
+    <!-- <header class="header-main">
+        <div class="profile-name">
+            {{username}}
+        </div>
+        <div class="posts-number">769 blogs</div>
+    </header> -->
+    
+    <div class="edit-profile-container">
+        <router-outlet></router-outlet>
+        <!-- <app-edit-profile>
+            <button class="material-symbols-outlined" (click)="closePopup()">close</button>
+        </app-edit-profile> -->
+    </div>
+    
+    <main>
+        <header class="header-wallpaper">
+            <!-- <div class="wallpaper-image"></div> -->
+            <img src="/assets/images/go_wallpaper.png" alt="profile-wallpaper">
+        </header>
+
+        <section class="profile">
+            <img src="assets/images/goprofile.png" alt="profile avatar" />
+            <!-- <button class="edit-profile-button" (click)="openPopup()">Edit Profile</button> -->
+            <button class="edit-profile-button" (click)="navigateToEdit()">Edit Profile</button>
+
+            <div class="name">
+                <!-- TODO fetch profile name -->
+                <h1>{{this.profile.userTag}}</h1>
+            </div>
+            <div class="username">
+                <!-- TODO fetch profile username -->
+                <h4>@{{this.profile.user?.username}}</h4>
+            </div>
+            <div class="bio">
+                <!-- TODO fetch profile bio -->
+                <!-- <p>La Roche University student majoring in computer science La Roche University student majoring in
+                    computer science La Roche University student majoring in computer science La Roche University
+                    student majoring in computer science La Roche University student majoring in computer science La
+                    Roche University student majoring in computer science</p> -->
+                <p> {{profile.bio}}</p>
+            </div>
+            <div class="interests">
+                <p id="interests-text">Interests: </p>
+                <!-- TODO fetch profile Interests -->
+                <!-- <p> Programming, Designing Front-End, Computer Security</p> -->
+                <p> {{profile.interests}}</p>
+            </div>
+            <div class="account-stats">
+                <!-- TODO fetch profile stats -->
+                <div class="following-number">
+                    <h2>500</h2>
+                    <h5>Following</h5>
+                </div>
+                <div class="followers-number">
+                    <h2>122</h2>
+                    <h5>Followers</h5>
+                </div>
+                <div class="blogs-number">
+                    <h2>23</h2>
+                    <h5>Blogs</h5>
+                </div>
+                <div class="comments-number">
+                    <h2>75</h2>
+                    <h5>Comments</h5>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-blogs-container">
+            <header>
+                <h2>My Blogs</h2>
+            </header>
+
+            <div class="profile-blogs">
+                <!-- For loop to show the blogs -->
+                <div class="a-profile-blog">
+                    <div id="a-blog-title">
+                        <h3>Title of the blog</h3>
+                    </div>
+                    <div class="description-and-stats">
+                        <p id="blog-description">Blog description or the head of the blog</p>
+                        <span id="blog-stats">
+                            10 c 2 L 0 D 21 V
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-blogs">
+                <!-- TODO For loop to show the blogs -->
+                <div class="a-profile-blog">
+                    <div id="a-blog-title">
+                        <h3>Title of the blog</h3>
+                    </div>
+                    <div class="description-and-stats">
+                        <p id="blog-description">Blog description or the head of the blog</p>
+                        <span id="blog-stats">
+                            10 c 2 L 0 D 21 V
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <!-- <img src="assets/images/goprofile.png" alt="" style="margin-top: 50px;"> -->
+    </main>
+</body>
